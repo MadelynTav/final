@@ -61,7 +61,7 @@ public class RadioButtonGroup {
                 buttonList.add(new Button(false, num));
             } else{
                 buttonList.add(new Button(true, num));}
-       git add  }
+      }
         num++;
     }
 
