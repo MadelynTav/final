@@ -17,7 +17,12 @@ public class USStates {
      */
     public static Map<Character, Integer> countStatesByFirstLetter() {
         Map<Character, Integer> map= new HashMap<Character, Integer>();
-
+        String alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        //I am assuming I don't have to check for lowercase and uppercase because the list
+        //provided has every first letter in uppercase
+        for(int i=0;i<alphabet.length();i++){
+            map.put(alphabet.charAt(i),0);
+        }
         for(String name: STATE_NAMES){
             char first=name.charAt(0);
             int num;
@@ -41,6 +46,7 @@ public class USStates {
         if (counts.get('A') != 4) throw new AssertionError();
         if (!counts.containsKey('B')) throw new AssertionError();
         if (counts.get('B') != 0) throw new AssertionError();
+        System.out.println(counts);
     }
 
     public static final String[] STATE_NAMES = {
