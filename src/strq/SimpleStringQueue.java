@@ -52,7 +52,6 @@ public class SimpleStringQueue implements StringQueue
         System.out.println(simpleStringQueue.dequeue(3));
         System.out.println(simpleStringQueue.dequeue(3));
         System.out.println(simpleStringQueue.dequeue(1));
-
-        //System.out.println(simpleStringQueue.dequeue(8));
+        System.out.println(simpleStringQueue.dequeue(8));
     }
 }

@@ -54,12 +54,22 @@ public class Dealer {
         // - Get a shuffled deck of cards.
         List<Card> cards=getShuffledDeck();
         // - Create a list of hands.
-        // - For each hand,
-        //   - Create a list of cards.
-        //   - Add cards to the hand, removing them from the deck.
-        //   - Add the hand to the list of hands.
-        // - Return the list of hands.
-        return null;
+        List<List<Card>> hands= new ArrayList<List<Card>>();
+
+        int numOfPlayersTracker=0;
+        while(numOfPlayersTracker<numPlayers){
+            List<Card> list = new ArrayList<Card>();
+
+            for(int i=0;i<numCards;i++)
+            {
+                list.add(cards.remove(0));
+            }
+            hands.add(list);
+            numOfPlayersTracker++;
+
+        }
+
+        return hands;
     }
 
     public static void main(String[] args) {
