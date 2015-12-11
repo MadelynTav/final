@@ -7,7 +7,6 @@ import java.util.Queue;
  */
 public class SimpleStringQueue implements StringQueue
 {
-    String string;
     Queue<Character> stringQueue;
     public SimpleStringQueue(){
         stringQueue= new LinkedList<Character>();
@@ -23,7 +22,6 @@ public class SimpleStringQueue implements StringQueue
     public void enqueue(String string)
     {
         //did not add to throw null pointer exception because exception is thrown automatically
-        this.string= string;
         for(int i=0;i<string.length();i++){
             stringQueue.add(string.charAt(i));
         }
@@ -53,6 +51,6 @@ public class SimpleStringQueue implements StringQueue
         System.out.println(simpleStringQueue.dequeue(3));
         System.out.println(simpleStringQueue.dequeue(3));
         System.out.println(simpleStringQueue.dequeue(1));
-        System.out.println(simpleStringQueue.dequeue(8));
+        //System.out.println(simpleStringQueue.dequeue(8));
     }
 }
