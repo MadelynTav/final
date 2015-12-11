@@ -1,5 +1,9 @@
 package radiobutton;
 
+import java.io.BufferedReader;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Represents a group of "radio buttons": toggle buttons for which exactly one is selected
  * at a given time. If a different button is selected, the previously-selected button is
@@ -9,6 +13,32 @@ package radiobutton;
  * button group has 4 buttons, they are numbered 0, 1, 2, and 3.
  */
 public class RadioButtonGroup {
+
+    public class Button{
+        int buttonNumber;
+        boolean selected;
+
+        public Button(boolean selected, int buttonNumber)
+        {
+            this.selected = selected;
+            this.buttonNumber = buttonNumber;
+        }
+
+        public int getButtonNumber()
+        {
+            return buttonNumber;
+        }
+
+        public boolean isSelected()
+        {
+            return selected;
+        }
+
+        public void setSelected(boolean selected)
+        {
+            this.selected = selected;
+        }
+    }
 
     /**
      * Creates a group of radio buttons.
@@ -20,8 +50,19 @@ public class RadioButtonGroup {
      * @raise RuntimeException
      *   The initial button number is invalid.
      */
+    List<Button> buttonList;
+    int num=0;
+
     public RadioButtonGroup(int numButtons, int initial) {
-        // TODO: Implement this method.
+        buttonList= new ArrayList<Button>();
+        while(num<numButtons){
+            if(num!=initial)
+            {
+                buttonList.add(new Button(false, num));
+            } else{
+                buttonList.add(new Button(true, num));}
+       git add  }
+        num++;
     }
 
     /**
@@ -40,6 +81,18 @@ public class RadioButtonGroup {
      */
     public void select(int button) {
         // TODO: Implement this method.
+        if(button>=buttonList.size()){
+            throw new RuntimeException("The Button Number Is Invalid");
+        }
+        for(Button cButton: buttonList){
+            if(cButton.getButtonNumber()==button){
+                cButton.setSelected(true);
+            } else{
+                if(cButton.isSelected()){
+                    cButton.setSelected(false);
+                }
+            }
+        }
     }
 
     /**
@@ -50,10 +103,21 @@ public class RadioButtonGroup {
      *   The button number is invalid.
      */
     public boolean isSelected(int button) {
-        // TODO: Implement this method.
+        for(Button button1: buttonList){
+            if(button1.getButtonNumber()==button&&button1.isSelected()){
+                return true;
+            }
+        }
         return false;
     }
 
-    // TODO: Add attributes and helper methods as needed.
+    public static void main(String[] args)
+    {
+
+        RadioButtonGroup radioButtonGroup= new RadioButtonGroup(5,3);
+        System.out.println(radioButtonGroup.toString());
+
+
+    }
 
 }

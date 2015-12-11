@@ -52,6 +52,7 @@ public class Dealer {
     public static List<List<Card>> deal(int numPlayers, int numCards) {
         // TODO: Finish this method as follows:
         // - Get a shuffled deck of cards.
+        List<Card> cards=getShuffledDeck();
         // - Create a list of hands.
         // - For each hand,
         //   - Create a list of cards.
