@@ -115,7 +115,7 @@ public class RadioButtonGroup {
     {
 
         RadioButtonGroup radioButtonGroup= new RadioButtonGroup(5,3);
-        System.out.println(radioButtonGroup.toString());
+        radioButtonGroup.select(6);
 
 
     }
