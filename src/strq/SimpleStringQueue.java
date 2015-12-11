@@ -23,7 +23,7 @@ public class SimpleStringQueue implements StringQueue
     public void enqueue(String string)
     {
         //did not add to throw null pointer exception because exception is thrown automatically
-     this.string= string;
+        this.string= string;
         for(int i=0;i<string.length();i++){
             stringQueue.add(string.charAt(i));
         }
@@ -48,6 +48,11 @@ public class SimpleStringQueue implements StringQueue
     public static void main(String[] args)
     {
         SimpleStringQueue simpleStringQueue= new SimpleStringQueue();
+        simpleStringQueue.enqueue("MADELYN");
         System.out.println(simpleStringQueue.length());
+        System.out.println(simpleStringQueue.dequeue(3));
+        System.out.println(simpleStringQueue.dequeue(3));
+        System.out.println(simpleStringQueue.dequeue(1));
+        System.out.println(simpleStringQueue.dequeue(8));
     }
 }
