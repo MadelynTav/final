@@ -9,8 +9,17 @@ public class Abbreviate {
      * lower case, removed.  Other characters are unmodified.
      */
     public static String abbreviate(String string) {
-        // TODO: Write this method.
-        return null;
+        String newString="";
+        if(string == null){
+            return null;
+        }
+        string = string.toLowerCase();
+        for(int i=0;i<string.length();i++){
+            if(!(string.charAt(i)=='a'||string.charAt(i)=='e'||string.charAt(i)=='u'||string.charAt(i)=='o'||string.charAt(i)=='i')){
+               newString+=string.charAt(i);
+            }
+        }
+        return newString;
     }
 
     public static void main(String[] args) {
