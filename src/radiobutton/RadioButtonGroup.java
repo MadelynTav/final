@@ -55,14 +55,15 @@ public class RadioButtonGroup {
 
     public RadioButtonGroup(int numButtons, int initial) {
         buttonList= new ArrayList<Button>();
+
         while(num<numButtons){
             if(num!=initial)
             {
                 buttonList.add(new Button(false, num));
             } else{
                 buttonList.add(new Button(true, num));}
+            num++;
       }
-        num++;
     }
 
     /**
@@ -80,7 +81,6 @@ public class RadioButtonGroup {
      *   The button number is invalid.
      */
     public void select(int button) {
-        // TODO: Implement this method.
         if(button>=buttonList.size()){
             throw new RuntimeException("The Button Number Is Invalid");
         }
@@ -103,8 +103,12 @@ public class RadioButtonGroup {
      *   The button number is invalid.
      */
     public boolean isSelected(int button) {
+
+        if(button>=buttonList.size()){
+            throw new RuntimeException("Button Does Not Exist");
+        }
         for(Button button1: buttonList){
-            if(button1.getButtonNumber()==button&&button1.isSelected()){
+            if(button1.getButtonNumber()==button && button1.isSelected()){
                 return true;
             }
         }
@@ -113,10 +117,13 @@ public class RadioButtonGroup {
 
     public static void main(String[] args)
     {
-
         RadioButtonGroup radioButtonGroup= new RadioButtonGroup(5,3);
-        radioButtonGroup.select(6);
-
+        System.out.println(radioButtonGroup.isSelected(3));
+        System.out.println(radioButtonGroup.isSelected(2));
+        radioButtonGroup.select(4);
+        System.out.println(radioButtonGroup.isSelected(2));
+        System.out.println(radioButtonGroup.isSelected(3));
+        System.out.println(radioButtonGroup.isSelected(4));
 
     }
 
