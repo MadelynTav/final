@@ -47,10 +47,12 @@ public class SimpleStringQueue implements StringQueue
     {
         SimpleStringQueue simpleStringQueue= new SimpleStringQueue();
         simpleStringQueue.enqueue("MADELYN");
+        simpleStringQueue.enqueue(" Lets Go Shopping");
         System.out.println(simpleStringQueue.length());
         System.out.println(simpleStringQueue.dequeue(3));
         System.out.println(simpleStringQueue.dequeue(3));
         System.out.println(simpleStringQueue.dequeue(1));
+
         //System.out.println(simpleStringQueue.dequeue(8));
     }
 }
